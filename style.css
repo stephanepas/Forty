@@ -3,12 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
+body {
   background-color: rgb(36, 41, 67);
 }
 /* image de fond */
 header {
-  background-image: url("./assets/img/chemin.jpg");
+  background-image: url('./assets/img/chemin.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -22,7 +22,6 @@ header {
   position: absolute;
   position: sticky;
   top: 0;
-  background-color: rgb(42, 47, 74);
 }
 #menu ul {
   display: flex;
@@ -42,7 +41,7 @@ header {
   padding: 0.3rem;
   margin-right: 1em;
   background-color: white;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 #logo span {
   display: none;
@@ -53,10 +52,12 @@ header {
   padding-right: 0.5rem;
 }
 #logo:hover,
-#menu__text:hover {
+#menu__text:hover,
+#reset:hover {
   color: turquoise;
 }
-#logo:hover strong {
+#logo:hover strong,
+#submit:hover {
   background-color: turquoise;
 }
 /* tentative de grid dans le header */
@@ -67,6 +68,7 @@ header {
   grid-template-rows: 2.5rem 6rem 2rem;
 }
 #intro1 {
+  font-size: 1.5rem;
   grid-row: 1;
   border-bottom: 1px solid white;
 }
@@ -74,7 +76,8 @@ header {
   grid-row: 2;
   align-self: center;
 }
-#getstarted {
+#getstarted,
+#learn_more {
   grid-row: 3;
   display: flex;
   width: max-content;
@@ -85,11 +88,12 @@ header {
   color: white;
   padding: 0.3rem 0.5rem;
 }
-#getstarted:hover {
+#getstarted:hover,
+#learn_more:hover {
   color: #40e0d0;
   border: 1px solid turquoise;
 }
-/* mise en place de ka fleche blanche */
+/* mise en place de la fleche blanche */
 #getstarted::after {
   padding-left: 0.5em;
   content: url(./assets/img/right-arrow.png);
@@ -125,7 +129,8 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  content: "";
+  content: '';
+  transition: 1s;
 }
 #container article:hover::before {
   background-color: rgba(255, 255, 255, 0);
@@ -202,7 +207,7 @@ header {
   background-color: rgba(135, 197, 164, 0.75);
 }
 /* Texte de fin avant contact */
-#containerfin{
+#containerfin {
   color: white;
   background-color: rgb(42, 47, 74);
 }
@@ -212,29 +217,190 @@ header {
   display: grid;
   grid-template-rows: 2.5rem 15rem 2rem;
 }
-/* partie contact */
-#form{
-  margin: 3rem 1.5rem 1rem 1.5rem;
+/* partie formulaire contact */
+#form {
+  padding: 3rem 1.5rem 1rem 1.5rem;
   color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: grid;
-  grid-template-rows: 2rem 2.75rem 2rem 2.75rem 2rem 1fr;
+  grid-template-rows: 2rem 2.75rem 2rem 2.75rem 2rem 1fr 3.75rem;
 }
-.label{
-align-self: center;
+.label {
+  align-self: center;
 }
-#name, #email, #message{
+#name,
+#email,
+#message {
   background-color: rgb(42, 47, 74);
   padding: 0 1rem;
   color: white;
   border: none;
   outline: 0;
 }
-#message{
+#message,
+#action {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-#name:focus , #email:focus, #message:focus{
+#name:focus,
+#email:focus,
+#message:focus {
   border: 1px solid turquoise;
+}
+#submit {
+  width: max-content;
+  padding: 0 1rem;
+  height: 2.75rem;
+  border: none;
+  outline: none;
+}
+#reset {
+  width: max-content;
+  padding: 0 1rem;
+  height: 2.75rem;
+  background-color: transparent;
+  border: 1px solid white;
+  outline: none;
+  color: white;
+}
+#reset:hover {
+  border: 1px solid turquoise;
+}
+/* partie coordonnées */
+#courriel,
+#tel,
+#adresse {
+  padding: 3rem 1.5rem 1rem 1.5rem;
+  color: white;
+  display: grid;
+  grid-template-rows: 3rem max-content;
+  grid-template-columns: 2.5rem 1fr;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.p,
+#mail {
+  grid-column: 2;
+  grid-row: 2;
+}
+#mail {
+  width: max-content;
+  text-decoration-line: none;
+  color: white;
+  border-bottom: 1px dotted;
+}
+#mail:hover {
+  color: turquoise;
+  border-bottom: 1px solid transparent;
+}
+#courriel i,
+#tel i,
+#adresse i {
+  font-size: 1.3rem;
+  align-self: center;
+}
+.h3 {
+  align-self: center;
+}
+/* debut du footer */
+#footer {
+  font-size: 0.8rem;
+  padding: 3rem 1.5rem 1rem 1.5rem;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+}
+#icons a {
+  text-decoration: none;
+  color: inherit;
+}
+#icons i {
+  font-size: 1rem;
+  padding-right: 1rem;
+}
+#icons i:hover {
+  color: turquoise;
+}
+#footer p {
+  color: rgba(255, 255, 255, 0.1);
+}
+#design,
+#demo {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+}
+#design:hover,
+#demo:hover {
+  color: turquoise;
+  border-bottom: 1px solid transparent;
+}
+/* landing page */
+#header__landing {
+  background-image: url('./assets/img/New-york.jpg');
+}
+#opaque__landing {
+  background-color: rgba(141, 130, 196, 0.75);
+}
+#strong__landing {
+  padding: 0.3rem;
+  margin-right: 1em;
+  background-color: white;
+  color: rgba(141, 130, 196, 0.75);
+}
+#intro__landing {
+  padding: 6rem 0 2rem 0;
+  margin: 0 2rem;
+  display: grid;
+  grid-template-rows: 2.5rem 6rem 2rem;
+}
+#container__landing {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(6, 25em);
+}
+.landing__lien {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+#landing1,
+#landing2,
+#landing3 {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#landing1 {
+  background-image: url('./assets/img/homme_nuage.jpg');
+}
+#landing2 {
+  background-image: url('./assets/img/ordinateur_table_bois.jpg');
+}
+#landing3 {
+  background-image: url('./assets/img/cabane.jpg');
+}
+/* generic page */
+#header__generic {
+  background-image: none;
+  background-color: rgb(42, 47, 74);
+}
+#generic {
+  padding: 3rem 0 1rem 0;
+  margin: 0 2rem;
+  display: grid;
+  grid-template-rows: 2.5rem 10rem repeat(3, max-content);
+  gap: 1.5rem;
+}
+#generic__photo{
+  background-image: url('./assets/img/photographe.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 /* media queries pour le responsive  */
 @media only screen and (min-width: 481px) {
