@@ -225,7 +225,7 @@ header {
   display: grid;
   grid-template-rows: 2rem 2.75rem 2rem 2.75rem 2rem 1fr 3.75rem;
 }
-.label {
+#form label {
   align-self: center;
 }
 #name,
@@ -389,6 +389,11 @@ header {
 #header__generic {
   background-image: none;
   background-color: rgb(42, 47, 74);
+  position: sticky;
+  top: 0;
+}
+#containerfin hr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 #generic {
   padding: 3rem 0 1rem 0;
@@ -397,12 +402,13 @@ header {
   grid-template-rows: 2.5rem 10rem repeat(3, max-content);
   gap: 1.5rem;
 }
-#generic__photo{
+#generic__photo {
   background-image: url('./assets/img/photographe.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
 /* media queries pour le responsive  */
+/* ecran au dessus de 480px */
 @media only screen and (min-width: 481px) {
   #logo span {
     display: inline;
@@ -438,10 +444,102 @@ header {
     grid-row: 3;
     grid-column: 2;
   }
+  #form {
+    grid-template: 2rem 2.75rem 2rem 1fr 3.75rem / 1fr 1fr;
+    column-gap: 1rem;
+  }
+  #label__name {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  #name {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  #label__email {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  #email {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  #label__message {
+    grid-area: 3 / 1 / 4 / 3;
+  }
+  #message {
+    grid-area: 4 / 1 / 5 / 3;
+  }
+  #action {
+    grid-area: 5 / 1 / 6 / 3;
+  }
 }
+/* ecran au dessus de 737px */
 @media only screen and (min-width: 737px) {
+  header {
+    height: 75vh;
+  }
+  #opaque,
+  #opaque__landing,
+  #intro__landing,
+  #intro {
+    height: 100%;
+  }
+  #intro {
+    grid-template: 1fr auto auto 1fr / 60% 40%;
+    padding: 0;
+  }
+  #intro #intro1 {
+    grid-area: 2/1/3/3;
+    font-size: 3.25rem;
+  }
+  #intro #intro2,#intro__landing #intro2  {
+    grid-row: 3;
+  }
+  #intro #getstarted {
+    grid-row: 3;
+    grid-column: 2;
+  }
+  #intro #intro2,
+  #intro #getstarted, #intro__landing #intro2 {
+    margin: 2rem 0;
+  }
+  #container {
+    grid-template-rows: repeat(3, 30vh);
+  }
+  #container div{
+    grid-template-rows: 1fr 3rem 3rem 1fr;
+  }
+  #container div h2{
+    font-size: 1.75rem;
+  }
+  #containerfin__intro #intro1, #container div h2{
+    font-size: 1.75rem;
+  }
+  #containerfin__intro #intro2, #container p, #generic p{
+    letter-spacing: 1px;
+    line-height: 1.6;
+  }
+  #header__landing {
+    height: 35rem;
+  }
+  #intro__landing {
+    grid-template-rows: 1fr auto auto 1fr;
+    padding: 0;
+  }
+  #intro__landing #intro1 {
+    grid-row: 2;
+    font-size: 3.25rem;
+  }
+  #header__generic{
+    height: auto;
+  }
+  #generic h2{
+    font-size: 2.5rem;
+    align-self: center;
+  }
 }
-
+/* ecran au dessus de 980px */
 @media only screen and (min-width: 981px) {
   #container {
     grid-template-rows: repeat(3, 25rem);
@@ -470,6 +568,29 @@ header {
   #container6 {
     grid-row: 3;
     grid-column: 2 / span 2;
+  }
+  #contact{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 60% 40%;
+  }
+  #form{
+    grid-area: 1/1/4/2;
+  }
+  #courriel{
+    grid-row: 1;
+    grid-column: 2;
+  }
+  #tel{
+    grid-row: 2;
+    grid-column: 2;
+  }
+  #adresse{
+    grid-row: 3;
+    grid-column: 2;
+  }
+  #courriel, #tel, #adresse{
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
 
