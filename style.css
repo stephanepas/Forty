@@ -19,7 +19,6 @@ header {
   background-color: rgba(14, 11, 67, 0.75);
 }
 #menu {
-  position: absolute;
   position: sticky;
   top: 0;
 }
@@ -218,6 +217,10 @@ header {
   grid-template-rows: 2.5em 15em 2em;
 }
 /* partie formulaire contact */
+#contact{
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+}
 #form {
   padding: 3em 1.5em 1em 1.5em;
   color: white;
@@ -392,9 +395,6 @@ header {
   position: sticky;
   top: 0;
 }
-.containerfin hr {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
 #generic {
   padding: 3em 0 1em 0;
   margin: 0 2em;
@@ -406,6 +406,7 @@ header {
   background-image: url('./assets/img/photographe.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 0 20%;
 }
 /* media queries pour le responsive  */
 /* ecran au dessus de 480px */
@@ -630,12 +631,15 @@ header {
   }
   #landing_text1 {
     grid-area: text1;
+    background-color: rgb(46, 53, 79);
   }
   #landing_text2 {
     grid-area: text2;
+    background-color: rgb(51, 57, 85);
   }
   #landing_text3 {
     grid-area: text3;
+    background-color: rgb(46, 53, 79);
   }
   #landing1 {
     grid-area: landing1;
@@ -665,5 +669,4 @@ header {
   #container__landing {
     grid-template-columns: 40% 1fr 40%;
   }
-
 }
